@@ -2,3 +2,5 @@ Microservicio Movimiento = http://localhost:87/movimientos/actualizar
 
 
 http://localhost:86/articulo/agregar
+
+no me dio tiempo para el manejo de errores en postgres D:
