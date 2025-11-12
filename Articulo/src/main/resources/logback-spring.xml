@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+
+    <!-- Appender principal: escribe TODO en un solo archivo -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/articulo.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level [%logger{36}] - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Solo mostrar tus logs (INFO o ERROR) -->
+    <logger name="com.example.Articulo" level="INFO" additivity="false">
+        <appender-ref ref="FILE" />
+    </logger>
+
+    <!-- Silenciar logs de frameworks -->
+    <logger name="org.springframework" level="ERROR"/>
+    <logger name="org.hibernate" level="ERROR"/>
+    <logger name="org.apache" level="ERROR"/>
+
+    <!-- Nivel general -->
+    <root level="ERROR">
+        <appender-ref ref="FILE" />
+    </root>
+
+</configuration>
